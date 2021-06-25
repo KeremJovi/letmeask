@@ -91,7 +91,7 @@ export function Room() {
               </div>
             ) : (
               <span>
-                Para enviar uma pergunta,<button>faça seu login</button>
+                Para enviar sua pergunta,<button>faça seu login</button>
               </span>
             )}
 
