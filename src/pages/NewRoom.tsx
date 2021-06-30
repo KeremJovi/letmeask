@@ -1,8 +1,8 @@
 import { Link, useHistory } from "react-router-dom";
 import { FormEvent, useState } from "react";
 
-import illustrationImg from "../assets/images/illustration.svg";
-import logoImg from "../assets/images/logo.svg";
+import logoqImg from "../assets/images/logoq.svg";
+import questionImg from "../assets/images/question.svg";
 
 import Button from "./../components/Button";
 import { useAuth } from "../hooks/useAuth";
@@ -27,20 +27,20 @@ export function NewRoom() {
       authorId: user?.id,
     });
 
-    history.push(`/rooms/${firebaseRoom.key}`);
+    history.push(`/admin/rooms/${firebaseRoom.key}`);
   }
 
   return (
     <div id="page-auth">
       <aside>
-        <img src={illustrationImg} alt="" />
+        <img src={logoqImg} alt="Perguntas" />
         <strong> Crie salas de Q&amp;A ao-vivo</strong>
         <p>Tire as dúvidas da sua audiência em tempo-real</p>
       </aside>
 
       <main>
         <div className="main-container">
-          <img src={logoImg} alt="Letmeask" />
+          <img src={questionImg} alt="Letmeask" />
           <h2>Criar uma nova sala</h2>
 
           <form onSubmit={handleCreateRoom}>
@@ -55,7 +55,7 @@ export function NewRoom() {
           </form>
 
           <p>
-            Quer entrar em uma sala ecistente? <Link to="/">Clique aqui</Link>
+            Quer entrar em uma sala existente? <Link to="/">Clique aqui</Link>
           </p>
         </div>
       </main>

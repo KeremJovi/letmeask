@@ -51,7 +51,7 @@ export function AuthContextProvider(props: AuthContextProviderProps) {
       if (!displayName || !photoURL) {
         throw new Error("Missing information from Google Account");
       }
-      //no meu codigo o avatar estava dando um erro então foi verificado que era somente colocar uma ! que voltaria a funcionar
+
       setUser({
         id: uid,
         name: displayName,

@@ -6,7 +6,7 @@
   aside {
     flex: 6;
 
-    background: #835afd;
+    background: #35a590;
     color: #fff;
 
     display: flex;
@@ -17,16 +17,18 @@
 
     img {
       max-width: 320px;
+      align-items: center;
+      justify-content: center;
     }
 
     strong {
-      font: 700 36px "Poppins", sans-serif;
+      font: 700 30px "Poppins", sans-serif;
       line-height: 42px;
       margin-top: 16px;
     }
 
     p {
-      font-size: 24px;
+      font-size: 20px;
       line-height: 32px;
       margin-top: 16px;
       color: #f8f8f8;
@@ -53,11 +55,12 @@
 
     > img {
       align-self: center;
+      max-width: 290px;
     }
 
     h2 {
       font-size: 24px;
-      margin: 64ps 0 24px;
+      margin: 64px 0 24px;
       font-family: "Poppins", sans-serif;
     }
     form {
@@ -86,7 +89,7 @@
       margin-top: 16px;
 
       a {
-        color: #e559f9;
+        color: #3b7f3d;
       }
     }
   }

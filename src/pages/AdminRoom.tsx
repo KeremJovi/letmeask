@@ -8,10 +8,10 @@ import { useRoom } from "./../hooks/useRoom";
 
 // import { database } from "../services/firebase";
 
-import logoImg from "../assets/images/logo.svg";
 import deleteImg from "../assets/images/delete.svg";
 import checkImg from "../assets/images/check.svg";
 import answerImg from "../assets/images/answer.svg";
+import questionImg from "../assets/images/question.svg";
 
 import Button from "../components/Button";
 import { RoomCode } from "./../components/RoomCode";
@@ -59,7 +59,7 @@ export function AdminRoom() {
     <div id="page-room">
       <header>
         <div className="content">
-          <img src={logoImg} alt="Letmeask" />
+          <img src={questionImg} alt="Letmeask" />
           <div>
             <RoomCode code={roomId} />
             <Button isOutlined onClick={handleEndRoom}>

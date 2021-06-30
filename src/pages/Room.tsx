@@ -1,6 +1,6 @@
 import "../styles/room.scss";
 
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useState, FormEvent } from "react";
 
 import { useAuth } from "../hooks/useAuth";
@@ -8,7 +8,7 @@ import { useRoom } from "./../hooks/useRoom";
 
 import { database } from "../services/firebase";
 
-import logoImg from "../assets/images/logo.svg";
+import questionImg from "../assets/images/question.svg";
 
 import Button from "../components/Button";
 import { RoomCode } from "./../components/RoomCode";
@@ -62,11 +62,12 @@ export function Room() {
       });
     }
   }
+
   return (
     <div id="page-room">
       <header>
         <div className="content">
-          <img src={logoImg} alt="Letmeask" />
+          <img src={questionImg} alt="Letmeask" />
           <RoomCode code={roomId} />
         </div>
       </header>
@@ -91,7 +92,8 @@ export function Room() {
               </div>
             ) : (
               <span>
-                Para enviar sua pergunta,<button>faça seu login</button>
+                Para enviar sua pergunta,
+                <Link to={`/access/${roomId}`}>faça seu login</Link>
               </span>
             )}
 

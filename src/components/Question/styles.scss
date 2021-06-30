@@ -11,7 +11,7 @@
 
   &.highlighted {
     background: #f4f0ff;
-    border: 1px solid #835afd;
+    border: 1px solid #35a590;
 
     footer .user-info span {
       color: #29292e;
@@ -19,7 +19,7 @@
   }
 
   &.answered {
-    background: #dbdcdd;
+    background: #d0e9d1;
   }
 
   p {
@@ -67,10 +67,10 @@
         gap: 8px;
 
         &.liked {
-          color: #835afd;
+          color: #0d2924;
 
           svg path {
-            stroke: #835afd;
+            stroke: #0d2924;
           }
         }
 
