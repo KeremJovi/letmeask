@@ -10,7 +10,7 @@
   }
 
   &.highlighted {
-    background: #f4f0ff;
+    background: #d0e9d1;
     border: 1px solid #35a590;
 
     footer .user-info span {
@@ -54,6 +54,13 @@
       gap: 16px;
     }
 
+    span {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #737380;
+      gap: 4px;
+    }
     button {
       border: 0;
       background: transparent;
