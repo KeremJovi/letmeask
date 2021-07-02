@@ -63,8 +63,18 @@ export function useRoom(roomId: string) {
           };
         }
       );
+      const descendingOrderLikes = parsedQuestions.sort((a, b) => {
+        if (a.isAnswered && !b.isAnswered) {
+          return 1;
+        } else if (!a.isAnswered && b.isAnswered) {
+          return -1;
+        } else {
+          return a.likeCount > b.likeCount ? -1 : 1;
+        }
+      });
+
+      setQuestions(descendingOrderLikes);
       setTitle(databaseRoom?.title);
-      setQuestions(parsedQuestions);
     });
 
     return () => {
