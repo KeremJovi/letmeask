@@ -88,3 +88,16 @@
     }
   }
 }
+
+@media screen and (max-width: 780px) {
+  .question {
+    margin: 0 5px 0 5px;
+    padding: 10px;
+  }
+  .user-info {
+    img {
+      width: 27px;
+      height: 27px;
+    }
+  }
+}
