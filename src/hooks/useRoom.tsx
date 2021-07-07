@@ -10,9 +10,9 @@ type QuestionsType = {
   };
   content: string;
   isAnswered: boolean;
-  isHighLighted: boolean;
+  isHighlighted: boolean;
   likeCount: number;
-  hasLiked: boolean;
+  likedId: string | undefined;
 };
 
 type FirebaseQuestions = Record<
@@ -24,7 +24,7 @@ type FirebaseQuestions = Record<
     };
     content: string;
     isAnswered: boolean;
-    isHighLighted: boolean;
+    isHighlighted: boolean;
     likes: Record<
       string,
       {
@@ -45,7 +45,8 @@ export function useRoom(roomId: string) {
 
     roomRef.on("value", (room) => {
       const databaseRoom = room.val();
-      const firebaseQuestions: FirebaseQuestions = databaseRoom.questions ?? {};
+      const firebaseQuestions: FirebaseQuestions =
+        databaseRoom?.questions ?? {};
 
       const parsedQuestions = Object.entries(firebaseQuestions).map(
         ([key, value]) => {
@@ -53,20 +54,27 @@ export function useRoom(roomId: string) {
             id: key,
             content: value.content,
             author: value.author,
-            isHighLighted: value.isHighLighted,
+            isHighlighted: value.isHighlighted,
             isAnswered: value.isAnswered,
             likeCount: Object.values(value.likes ?? {}).length,
-            hasLiked: Object.values(value.likes ?? {}).some(
-              (like) => like.authorId === user?.id
-            ),
             likedId: Object.entries(value.likes ?? {}).find(
               ([key, like]) => like.authorId === user?.id
-            ),
+            )?.[0],
           };
         }
       );
-      setTitle(databaseRoom.title);
-      setQuestions(parsedQuestions);
+      const descendingOrderLikes = parsedQuestions.sort((a, b) => {
+        if (a.isAnswered && !b.isAnswered) {
+          return 1;
+        } else if (!a.isAnswered && b.isAnswered) {
+          return -1;
+        } else {
+          return a.likeCount > b.likeCount ? -1 : 1;
+        }
+      });
+
+      setQuestions(descendingOrderLikes);
+      setTitle(databaseRoom?.title);
     });
 
     return () => {

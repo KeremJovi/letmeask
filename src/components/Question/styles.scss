@@ -9,6 +9,19 @@
     margin-top: 8px;
   }
 
+  &.highlighted {
+    background: #d0e9d1;
+    border: 1px solid #3b7f3d;
+
+    footer .user-info span {
+      color: #29292e;
+    }
+  }
+
+  &.answered {
+    background: #a1d3a2;
+  }
+
   p {
     color: #29292e;
   }
@@ -36,6 +49,18 @@
       }
     }
 
+    > div {
+      display: flex;
+      gap: 16px;
+    }
+
+    span {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #737380;
+      gap: 4px;
+    }
     button {
       border: 0;
       background: transparent;
@@ -49,10 +74,10 @@
         gap: 8px;
 
         &.liked {
-          color: #835afd;
+          color: #0d2924;
 
           svg path {
-            stroke: #835afd;
+            stroke: #0d2924;
           }
         }
 
@@ -60,6 +85,19 @@
           filter: brightness(0.8);
         }
       }
+    }
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .question {
+    margin: 0 5px 0 5px;
+    padding: 10px;
+  }
+  .user-info {
+    img {
+      width: 27px;
+      height: 27px;
     }
   }
 }
