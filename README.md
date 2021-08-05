@@ -49,7 +49,6 @@ Página de quem acessa a sala
   <img align="center" alt="New-Gh" height="30" width="40" src="https://github.com/devicons/devicon/blob/master/icons/react/react-original.svg">
 </div>
 
-<hr />
 
 ## Se quiser dar uma olhadinha !! 
 site: https://let-me-ask-me.web.app/
